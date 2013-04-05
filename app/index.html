@@ -30,8 +30,9 @@
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
         <script type="text/javascript">
 
-            var correct = 'Kommendörkaptenen'.split(''),
-                shuffled = shuffle(correct);
+            var correct = 'Hej'.split(''),
+                shuffled = shuffle(correct),
+                output = '';
 
             //+ Jonas Raoni Soares Silva
             //@ http://jsfromhell.com/array/shuffle [v1.0]
@@ -40,6 +41,17 @@
                 return o;
             };
 
+            for (var i = 0; i < shuffled.length; i++) {
+                output += '<li>'+shuffled[i]+'</li>';
+            }
+
+            document.querySelector('ul').innerHTML = output;
+
+            [].forEach.call(document.querySelectorAll('li'), function (el) {
+                el.addEventListener('click', function () {
+                    // Do something. Add class or whatever     
+                });
+            });
             
             
         </script>
