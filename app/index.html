@@ -17,18 +17,7 @@
     </head>
     <body>
     <div class="container">
-        <div class="hero-unit">
-            <h1>Wotcha!</h1>
-            <p>You now have</p>
-            <ul>
-                <li>HTML5 Boilerplate</li>
-                <li>jQuery</li>
-                <li>Modernizr</li>
-                <li>Mocha</li>
-            </ul>
-            <p>installed.</p>
-            <h3>Enjoy coding! - Yeoman</h3>
-        </div>
+        <ul></ul>
     </div>
 
         <!--[if lt IE 7]>
@@ -41,29 +30,18 @@
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
         <script type="text/javascript">
 
-            var correct = 'Hej'.split(''),
-                i = correct.length,
-                shuffled = [];
+            var correct = 'Kommendörkaptenen'.split(''),
+                shuffled = shuffle(correct);
 
-            function getRandomArbitrary(min, max) {
-                return Math.floor( Math.random() * (max - min) + min );
-            }
+            //+ Jonas Raoni Soares Silva
+            //@ http://jsfromhell.com/array/shuffle [v1.0]
+            function shuffle (o){ //v1.0
+                for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+                return o;
+            };
 
-            function shuffleArray (i) {
-                var randomNumber = getRandomArbitrary(0, correct.length);
-                console.log(correct[i]);
-                if (shuffled[randomNumber] === 'undefined') {
-                    shuffled[randomNumber] = correct[i];
-                } else {
-                    //shuffleArray();
-                }
-            }
-
-            while (shuffled.length <= i) {
-                shuffleArray(i);
-                i--;
-            }
-                    
+            
+            
         </script>
 
 
