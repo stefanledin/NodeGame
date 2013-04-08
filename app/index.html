@@ -17,7 +17,8 @@
     </head>
     <body>
     <div class="container">
-        <ul></ul>
+        <ul class="word"></ul>
+        <ul class="letters"></ul>
     </div>
 
         <!--[if lt IE 7]>
@@ -39,19 +40,28 @@
             function shuffle (o){ //v1.0
                 for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
                 return o;
-            };
+            }
 
             for (var i = 0; i < shuffled.length; i++) {
                 output += '<li>'+shuffled[i]+'</li>';
             }
 
-            document.querySelector('ul').innerHTML = output;
+            document.querySelector('ul.letters').innerHTML = output;
 
             [].forEach.call(document.querySelectorAll('li'), function (el) {
-                el.addEventListener('click', function () {
-                    // Do something. Add class or whatever     
-                });
+                el.addEventListener('click', selectLetter);
             });
+
+            function selectLetter (e) {
+                document.querySelector('ul.word').innerHTML += e.target.outerHTML;
+                [].forEach.call(document.querySelectorAll('ul.word li'), function (el) {
+                    el.addEventListener('click', removeLetter);
+                });
+            }
+
+            function removeLetter (e) {
+                e.target.outerHTML = '';
+            }
             
             
         </script>
