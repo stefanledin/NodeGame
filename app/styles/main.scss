@@ -3,7 +3,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-}
+
 	li {
 		margin: 0 10px 10px 0;
 		width: 40px;
@@ -14,10 +14,11 @@ ul {
 		background: #e8e8e8;
 		border: 1px solid #333;
 		cursor: pointer;
-	}
-		li:hover {
+		&:hover {
 			background: #ccc;
 		}
-	.selected {
-		opacity: .3;
 	}
+}
+.selected {
+	opacity: .5;
+}
