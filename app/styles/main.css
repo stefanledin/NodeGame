@@ -18,3 +18,6 @@ ul {
 		li:hover {
 			background: #ccc;
 		}
+	.selected {
+		opacity: .3;
+	}
