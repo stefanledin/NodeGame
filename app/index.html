@@ -53,6 +53,7 @@
             });
 
             function selectLetter (e) {
+                if (!e.target.className.search('selected')) return false;
                 document.querySelector('ul.word').innerHTML += e.target.outerHTML;
                 [].forEach.call(document.querySelectorAll('ul.word li'), function (el) {
                     el.addEventListener('click', removeLetter);
