@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -43,7 +43,7 @@
             }
 
             for (var i = 0; i < shuffled.length; i++) {
-                output += '<li>'+shuffled[i]+'</li>';
+                output += '<li data-letter="'+i+'">'+shuffled[i]+'</li>';
             }
 
             document.querySelector('ul.letters').innerHTML = output;
@@ -57,9 +57,13 @@
                 [].forEach.call(document.querySelectorAll('ul.word li'), function (el) {
                     el.addEventListener('click', removeLetter);
                 });
+                e.target.className += 'selected';
             }
 
             function removeLetter (e) {
+                var dataID = e.target.attributes[0].value,
+                    letter = document.querySelector('.letters li[data-letter="'+dataID+'"]');
+                letter.className = letter.className.replace('selected', '');
                 e.target.outerHTML = '';
             }
             
